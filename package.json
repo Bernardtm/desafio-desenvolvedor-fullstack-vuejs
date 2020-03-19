@@ -1,8 +1,8 @@
 {
   "name": "desafio-desenvolvedor-fullstack-vuejs",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
+  "description": "Desafio Desenvolvedor FullStack - VueJS",
+  "productName": "Desafio Desenvolvedor FullStack - VueJS",
   "cordovaId": "no",
   "capacitorId": "",
   "author": "Bernard Mendes <bernardtm.dev@gmail.com>",
