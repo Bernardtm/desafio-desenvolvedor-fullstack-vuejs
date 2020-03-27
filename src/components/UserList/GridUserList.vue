@@ -53,6 +53,7 @@
 import userList from 'assets/mock/userList'
 export default {
   name: 'GridUserList',
+  props: ['filtro'],
   created () {
     this.itens = userList
   },
@@ -74,6 +75,11 @@ export default {
         { name: 'acoes', label: 'AÇÕES', field: 'acoes', align: 'center' }
       ],
       selected: []
+    }
+  },
+  watch: {
+    filtro: function (value) {
+      this.filter = value
     }
   }
 }

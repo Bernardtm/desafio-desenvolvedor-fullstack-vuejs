@@ -16,58 +16,13 @@
         color="deep-orange"
         glossy
       />
-      <q-dialog v-model="opened" :position="'right'">
-        <q-card style="width: 550px; height: 1600px; background-color: #F5F5F5;">
-          <div class="row q-pa-lg justify-between" style="background-color: white">
-            <q-icon name="tune" size="sm" />
-            <div>FILTROS</div>
-            <q-btn icon="close" />
-          </div>
-          <div class="q-pa-md" style="color: #717171">
-            Utilize os filtros abaixo para refinar os resultados da tabela,
-            clique no botão APLICAR para salvar as alterações.
-          </div>
-          <div>
-            <q-expansion-item
-              expand-separator
-              icon="date_range"
-              label="TODAS AS DATAS DE INCLUSÃO"
-              style="color: #D83468;"
-            >
-            </q-expansion-item>
-          </div>
-          <div>
-            <q-expansion-item
-              expand-separator
-              icon="date_range"
-              label="TODAS AS DATAS DE ALTERAÇÃO"
-              style="color: #D83468;"
-            >
-            </q-expansion-item>
-          </div>
-          <div>
-            <q-expansion-item
-              expand-separator
-              icon="hdr_strong"
-              label="ATIVOS E INATIVOS"
-              style="color: #D83468;"
-            >
-            </q-expansion-item>
-          </div>
-          <q-btn
-            class="full-width"
-            style="color: #D83468"
-            label="APLICAR"
-            disabled
-          />
-        </q-card>
-      </q-dialog>
     </div>
     <div>
       <q-input
         color="grey-3"
-        v-model="text"
+        v-model="filter"
         label="Pesquisar..."
+        @input="pesquisa"
       >
         <template v-slot:append>
           <q-icon name="search" />
@@ -97,6 +52,52 @@
         icon="power_settings_new"
       />
     </div>
+    <q-dialog v-model="opened" :position="'right'">
+      <q-card style="width: 550px; height: 1600px; background-color: #F5F5F5;">
+        <div class="row q-pa-lg justify-between" style="background-color: white">
+          <q-icon name="tune" size="sm" />
+          <div>FILTROS</div>
+          <q-btn icon="close" />
+        </div>
+        <div class="q-pa-md" style="color: #717171">
+          Utilize os filtros abaixo para refinar os resultados da tabela,
+          clique no botão APLICAR para salvar as alterações.
+        </div>
+        <div>
+          <q-expansion-item
+            expand-separator
+            icon="date_range"
+            label="TODAS AS DATAS DE INCLUSÃO"
+            style="color: #D83468;"
+          >
+          </q-expansion-item>
+        </div>
+        <div>
+          <q-expansion-item
+            expand-separator
+            icon="date_range"
+            label="TODAS AS DATAS DE ALTERAÇÃO"
+            style="color: #D83468;"
+          >
+          </q-expansion-item>
+        </div>
+        <div>
+          <q-expansion-item
+            expand-separator
+            icon="hdr_strong"
+            label="ATIVOS E INATIVOS"
+            style="color: #D83468;"
+          >
+          </q-expansion-item>
+        </div>
+        <q-btn
+          class="full-width"
+          style="color: #D83468"
+          label="APLICAR"
+          disabled
+        />
+      </q-card>
+    </q-dialog>
   </div>
 </template>
 
@@ -105,7 +106,13 @@ export default {
   name: 'MenuUserList',
   data () {
     return {
-      opened: false
+      opened: false,
+      filter: ''
+    }
+  },
+  methods: {
+    pesquisa (value) {
+      this.$emit('pesquisa', value)
     }
   }
 }

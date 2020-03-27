@@ -1,11 +1,11 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-grey-3 text-grey-9">
-      <menu-user-list />
+      <menu-user-list @pesquisa="pesquisa"/>
     </q-header>
     <q-page-container>
       <q-page class="flex flex-center">
-        <grid-user-list/>
+        <grid-user-list :filtro="filtro"/>
       </q-page>
     </q-page-container>
     <q-footer elevated class="bg-black">
@@ -24,6 +24,16 @@ export default {
     MenuUserList,
     GridUserList,
     FooterLive
+  },
+  data () {
+    return {
+      filtro: ''
+    }
+  },
+  methods: {
+    pesquisa (value) {
+      this.filtro = value
+    }
   }
 }
 </script>
