@@ -19,7 +19,8 @@
         <template slot="body" slot-scope="props">
           <q-tr :props="props">
             <q-td auto-width>
-              <q-checkbox color="primary" v-if="props.row.status.id !== 1 && !props.row.emVotacao && props.row.status.id !== 5 && props.row.status.id !== 12" v-model="props.selected" />
+              {{props.row.index}}
+              <q-checkbox color="primary" v-model="props.selected" />
             </q-td>
             <q-td key="usuario" :props="props">{{ props.row.usuario }}</q-td>
             <q-td key="email" :props="props">{{ props.row.email }}</q-td>
@@ -96,5 +97,11 @@ export default {
   }
   .q-tr:hover .action-buttons {
     visibility: visible;
+  }
+  .q-tr:nth-child(even) {
+    background-color: #E9E9E9;
+  }
+  .q-tr:nth-child(odd) {
+    background-color: #F5F5F5;
   }
 </style>
