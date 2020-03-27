@@ -1,3 +1,14 @@
+# TODO
+- finalizar modal lateral
+- aplicar cores no grid
+- mostrar butões de ações no grid
+- utilizar barra de pesquisa para filtrar
+- encontrar ícone do botão do canto superior direito
+- encontrar ícone do texto Última atualização
+- Fazer testes
+
+
+
 # Quasar App (desafio-desenvolvedor-fullstack-vuejs)
 
 A Quasar Framework app
