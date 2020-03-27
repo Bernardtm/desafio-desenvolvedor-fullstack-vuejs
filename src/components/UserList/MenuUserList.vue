@@ -17,7 +17,7 @@
         glossy
       />
       <q-dialog v-model="opened" :position="'right'">
-        <q-card style="width: 550px; height: 900px; background-color: #F5F5F5;">
+        <q-card style="width: 550px; height: 1600px; background-color: #F5F5F5;">
           <div class="row q-pa-lg justify-between" style="background-color: white">
             <q-icon name="tune" size="sm" />
             <div>FILTROS</div>
@@ -28,19 +28,38 @@
             clique no botão APLICAR para salvar as alterações.
           </div>
           <div>
-            <q-icon name="calendar" />
-            <span style="color: #D83468;">TODAS AS DATAS DE INCLUSÃO</span>
+            <q-expansion-item
+              expand-separator
+              icon="date_range"
+              label="TODAS AS DATAS DE INCLUSÃO"
+              style="color: #D83468;"
+            >
+            </q-expansion-item>
           </div>
           <div>
-            <q-icon name="calendar" />
-            <span style="color: #D83468;">TODAS AS DATAS DE ALTERAÇÃO</span>
+            <q-expansion-item
+              expand-separator
+              icon="date_range"
+              label="TODAS AS DATAS DE ALTERAÇÃO"
+              style="color: #D83468;"
+            >
+            </q-expansion-item>
           </div>
           <div>
-            <q-icon name="more_horiz" />
-            <span style="color: #D83468;">ATIVOS E INATIVOS</span>
+            <q-expansion-item
+              expand-separator
+              icon="hdr_strong"
+              label="ATIVOS E INATIVOS"
+              style="color: #D83468;"
+            >
+            </q-expansion-item>
           </div>
-
-          <q-btn label="APLICAR" disabled />
+          <q-btn
+            class="full-width"
+            style="color: #D83468"
+            label="APLICAR"
+            disabled
+          />
         </q-card>
       </q-dialog>
     </div>
