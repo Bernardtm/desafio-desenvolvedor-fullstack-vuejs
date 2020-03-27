@@ -5,6 +5,9 @@
         icon="settings"
       />
     </div>
+    <div style="color: #EAEAEA; font-size: 30px; font-weight: bold;">
+      |
+    </div>
     <div>
       <q-btn
         icon="security"
@@ -29,7 +32,7 @@
         </template>
       </q-input>
     </div>
-    <div>
+    <div class="row">
       <q-btn
         icon="tune"
         @click="opened = true"
@@ -39,6 +42,9 @@
         color="pink"
         icon="person"
       />
+      <div style="color: #EAEAEA; font-size: 30px; font-weight: bold;">
+        |
+      </div>
       <q-btn
         flat
         icon="home"

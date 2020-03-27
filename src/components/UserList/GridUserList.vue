@@ -32,7 +32,13 @@
               </span>
             </q-td>
             <q-td key="acoes" :props="props">
-              <q-btn flat round dense icon="more_horiz" />
+              <div class="row">
+                <q-btn class="action-buttons" color="grey-8" flat round dense icon="delete" />
+                <q-btn class="action-buttons" color="grey-8" flat round dense icon="archive" />
+                <q-btn class="action-buttons" color="grey-8" flat round dense icon="security" />
+                <q-btn class="action-buttons" color="grey-8" flat round dense icon="edit" />
+                <q-btn color="grey-8" flat round dense icon="more_horiz" />
+              </div>
             </q-td>
           </q-tr>
         </template>
@@ -84,3 +90,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+  .q-tr .action-buttons {
+    visibility: hidden;
+  }
+  .q-tr:hover .action-buttons {
+    visibility: visible;
+  }
+</style>
